@@ -31,7 +31,7 @@ header.menu {
   justify-content: space-between;
 }
 
-.logo g[fill*="#00856f"] {
+.logo g[fill*='#00856f'] {
   fill: var(--first-color);
 }
 
