@@ -1,26 +1,40 @@
+@font-face {
+  font-family: eurostile;
+  src: url('eurostile.TTF');
+}
+
 * {
-  font-family: 'DM Sans';
   margin: 0;
+  padding: 0;
 }
 
 :root {
-  --hue: 195;
 
-  --first-color: hsl(var(--hue), 100%, 26%);
-  --scnd-color: hsl(210, 11%, 15%);
-  --trd-color: hsl(210, 9%, 31%);
-  --bck-color: hsl(calc(var(--hue) - 22), 23%, 89%);
-  --bright-color: hsl(39, 100%, 97%);
+  --primary-color: hsl(0, 0%, 100%);
+  --text-color: hsl(227, 49%, 15%);
+  --secondary-color: hsl(266, 94%, 52%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'eurostile';
+  font-size: 16px;
+  background-color: var(--bck-color);
+  text-align: center;
+  overflow: overlay;
 }
 
 ul {
   list-style: none;
-}
-
-html {
-  padding-left: 123px;
-  padding-right: 123px;
-  background-color: var(--bck-color);
 }
 
 /*=== MENU ============================*/
@@ -29,10 +43,12 @@ header.menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 123px;
+  padding-right: 123px;
 }
 
 .logo g[fill*='#00856f'] {
-  fill: var(--first-color);
+  fill: var(--secondary-color);
 }
 
 .menuitens {
@@ -45,11 +61,11 @@ header.menu {
 
 .menuitens li a {
   text-decoration: none;
-  color: var(--first-color);
+  color: var(--secondary-color);
 }
 
 .menuitens li a:hover {
-  filter: brightness(1.3);
+  filter: brightness(1.2);
 }
 
 .button {
@@ -58,100 +74,200 @@ header.menu {
   font-weight: 700;
   text-transform: uppercase;
 
-  color: var(--bck-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
   text-decoration: none;
 
   border-radius: 50px;
   box-sizing: border-box;
-  border: 1px solid var(--first-color);
 
   width: 190px;
   height: 38px;
   margin-top: 15px;
-  background-color: var(--first-color);
   padding: 10px 24px;
 }
 
 .button:hover {
-  filter: brightness(1.3);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--first-color);
+  color: var(--primary-color);
 }
 
-/*=== HERO ===========================*/
+/*=== HOME ===========================*/
 
-#home h4 {
-  color: var(--first-color);
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 150%;
-  letter-spacing: 0.08em;
+.hero-body {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  margin-top: 80px;
-  margin-bottom: 16px;
+}
+
+#home .column {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 4rem;
+}
+
+#home h1 {
+  color: var(--text-color);
+  font-weight: 900;
+  font-size: 3.1rem;
+  line-height: 125%;
+  margin-bottom: 1.5rem;
 }
 
 #home h2 {
-  color: var(--scnd-color);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 34px;
-  line-height: 130%;
-
-  margin-bottom: 24px;
+  color: var(--text-color);
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.5rem;
 }
 
-#home p {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-
-  color: var(--trd-color);
+#home .avatar {
+  width: 210px;
+  border-radius: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
 }
 
-#home img {
-  width: 600px;
+#home .container {
+  padding: 0;
+  border: 0;
+
 }
 
-/*=== CONTENT =========================*/
-#home .content {
-  text-align: center;
+#home .img-bottom {
+  margin-bottom: -0.4rem;
+  height: auto;
 }
 
-#home .content-box {
+#home .hero-foot {
+  padding: 0rem 1.5rem;
+}
+
+/*=== MEDIUM ===========================*/
+
+#medium {
+  width: 100%;
+  background-color: #7510F7;
+  display: block;
+  height: auto;
+}
+
+#medium .column-centered {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
   display: inline-block;
-  background-color: var(--bright-color);
-  border-radius: 10px;
-  width: 1120px;
-  height: 210px;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 25rem;
 }
 
-#home .content-box p {
-  font-size: 18px;
-  line-height: 150%;
+#medium h1 {
+  color: white;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 112%;
+
+  margin-bottom: 2rem;
+}
+
+#medium h2 {
+  font-weight: 100;
+  line-height: 125%;
+  color: white;
+}
+
+#skills {
+  margin-top: -14rem;
+  padding-bottom: 1rem;
+  padding: 5rem 1.5rem;
   text-align: center;
-
-  color: var(--trd-color);
-
-  padding: 10px;
-  margin-top: 20px;
-  font-weight: 500;
+  display: block;
 }
 
-#home .content-box ul {
+#skills .container {
+  max-width: 1200px;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  display: block;
+  text-align: center;
+}
+
+#skills .box {
+  padding: 0;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 5px 5px 0 rgb(233 240 243 / 50%), 0 0 0 1px #e6ecf8;
+  color: #141c3a;
+  display: block;
+  margin: 0;
+  border: 0;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+#skills .content {
+  color: #141c3a;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+#skills .columns {
+  margin-left: 0;
+  margin-right: 0;
   display: flex;
-  margin: 20px;
-  justify-content: space-between;
-  padding: 30px 100px;
+  margin-bottom: -0.75rem;
+  margin-top: -0.75rem;
 }
 
-#home .content li + li {
-  border-left: 1px solid var(--first-color);
+#skills .column {
+  padding: 70px 45px;
+  border-bottom: 0px solid #E6ECF8;
+  border-right: 1px solid #E6ECF8;
+  display: block;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border: 0;
+  vertical-align: baseline;
 }
 
-#home .content li {
-  flex: 1;
+#skills h1 {
+  color: #141c3a;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  margin-top: 1em;
+  line-height: 112%;
+  font-size: 1.5rem;
 }
 
-#home .content a:hover {
-  filter: brightness(1.2);
+#skills p {
+  color: #141c3a;
+  font-size: 18px;
+  margin-bottom: 2em;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+
 }
